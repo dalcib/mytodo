@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { StyleSheet, View, FlatList } from 'react-native'
-import { Text, FAB, List } from 'react-native-paper'
+import { Text, FAB, List, Checkbox } from 'react-native-paper'
 
 import Header from '../components/Header'
 
@@ -32,6 +32,7 @@ function ViewNotes({ navigation }) {
                 descriptionNumberOfLines={1}
                 titleStyle={styles.listTitle}
                 onPress={() => deleteNote(item.id)}
+                left={props => <Checkbox.Android status={'unchecked'} onPress={() => {}} />}
               />
             )}
             keyExtractor={item => item.id.toString()}
